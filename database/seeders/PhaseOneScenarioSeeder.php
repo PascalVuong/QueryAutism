@@ -78,6 +78,8 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'Olivia Owner',
                 'email' => 'owner@queryautism.test',
                 'status' => 'active',
+                'last_login_at' => $now->subDay(),
+                'last_login_ip' => '192.0.2.10',
             ]);
 
         UserProfile::factory()
@@ -94,6 +96,8 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'Mila Manager',
                 'email' => 'multi.manager@queryautism.test',
                 'status' => 'active',
+                'last_login_at' => $now->subDays(2),
+                'last_login_ip' => '192.0.2.11',
             ]);
 
         UserProfile::factory()
@@ -109,6 +113,8 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'No Profile User',
                 'email' => 'no.profile@queryautism.test',
                 'status' => 'active',
+                'last_login_at' => $now->subDays(3),
+                'last_login_ip' => '192.0.2.12',
             ]);
 
         $suspendedUser = User::factory()
