@@ -68,6 +68,7 @@ Stores login accounts. A user can be a platform user, organization employee, cus
 - `hasOne(UserProfile::class)`
 - `belongsToMany(Organization::class)->using(OrganizationUser::class)`
 - `hasMany(Customer::class)`
+- `hasManyThrough(CustomerProfile::class, Customer::class)`
 
 ## Seed scenarios
 
@@ -356,7 +357,7 @@ Stores denormalized customer statistics and preferences. This creates useful com
 ## Relationships
 
 - `belongsTo(Customer::class)`
-- later User can reach this through a `hasOneThrough` relation
+- a User can reach multiple customer profiles through `hasManyThrough(CustomerProfile::class, Customer::class)`
 
 ## Seed scenarios
 
@@ -615,7 +616,8 @@ This allows duplicate unverified values while preventing duplicate verified valu
 User
 ├── hasOne UserProfile
 ├── belongsToMany Organizations
-└── hasMany Customers
+├── hasMany Customers
+└── hasManyThrough CustomerProfiles
 
 Organization
 ├── belongsTo parent Organization
@@ -687,6 +689,7 @@ Membership
 - `ofMany`
 - many-to-many pivot filters
 - self-referencing relations
+- `hasManyThrough`
 
 ## Raw SQL
 

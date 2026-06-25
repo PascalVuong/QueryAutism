@@ -3,45 +3,48 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 #[Fillable([
     'uuid',
+    'parent_id',
     'name',
+    'legal_name',
+    'slug',
+    'registration_number',
+    'vat_number',
     'email',
-    'email_verified_at',
-    'password',
+    'phone',
     'status',
-    'locale',
     'timezone',
-    'last_login_at',
-    'last_login_ip',
+    'currency',
+    'country_code',
+    'settings',
+    'onboarded_at',
 ])]
-#[Hidden([
-    'password',
-    'remember_token',
-])]
-class User extends Authenticatable
+class Organization extends Model
 {
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, SoftDeletes;
 
-    public function profile(): HasOne
+    public function parent(): BelongsTo
     {
-        return $this->hasOne(UserProfile::class);
+        return $this->belongsTo(self::class, 'parent_id');
     }
 
-    public function organizations(): BelongsToMany
+    public function children(): HasMany
+    {
+        return $this->hasMany(self::class, 'parent_id');
+    }
+
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(
-            Organization::class,
+            User::class,
             'organization_users',
         )
             ->using(OrganizationUser::class)
@@ -58,7 +61,7 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
-    public function organizationMemberships(): HasMany
+    public function userMemberships(): HasMany
     {
         return $this->hasMany(OrganizationUser::class);
     }
@@ -68,12 +71,19 @@ class User extends Authenticatable
         return $this->hasMany(Customer::class);
     }
 
-    public function customerProfiles(): HasManyThrough
+    public function membershipPlans(): HasMany
     {
-        return $this->hasManyThrough(
-            CustomerProfile::class,
-            Customer::class,
-        );
+        return $this->hasMany(MembershipPlan::class);
+    }
+
+    public function memberships(): HasMany
+    {
+        return $this->hasMany(Membership::class);
+    }
+
+    public function externalIdentifiers(): HasMany
+    {
+        return $this->hasMany(ExternalIdentifier::class);
     }
 
     /**
@@ -82,9 +92,8 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-            'last_login_at' => 'datetime',
+            'settings' => 'array',
+            'onboarded_at' => 'datetime',
         ];
     }
 }
