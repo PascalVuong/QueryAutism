@@ -10,12 +10,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->unique();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestampTz('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('status', 30)->default('pending')->index();
+            $table->string('locale', 10)->default('en');
+            $table->string('timezone', 100)->default('Europe/Amsterdam');
+            $table->timestampTz('last_login_at')->nullable()->index();
+            $table->ipAddress('last_login_ip')->nullable();
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestampTz('created_at')->useCurrent();
+            $table->timestampTz('updated_at')->useCurrent();
+            $table->softDeletesTz();
         });
     }
 
