@@ -96,6 +96,21 @@ class Organization extends Model
         return $this->hasMany(Reservation::class);
     }
 
+    public function priceRules(): HasMany
+    {
+        return $this->hasMany(PriceRule::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function creditAccounts(): HasMany
+    {
+        return $this->hasMany(CreditAccount::class);
+    }
+
     /**
      * @return array<string, string>
      */

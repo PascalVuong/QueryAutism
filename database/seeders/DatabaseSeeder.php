@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PhaseOneScenarioSeeder::class,
             PhaseTwoScenarioSeeder::class,
+            PhaseThreeScenarioSeeder::class,
         ]);
     }
 }

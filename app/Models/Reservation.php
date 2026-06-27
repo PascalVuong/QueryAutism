@@ -84,6 +84,21 @@ class Reservation extends Model
             ]);
     }
 
+    public function charges(): HasMany
+    {
+        return $this->hasMany(ReservationCharge::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function refunds(): HasMany
+    {
+        return $this->hasMany(Refund::class);
+    }
+
     public function resources(): BelongsToMany
     {
         return $this->belongsToMany(

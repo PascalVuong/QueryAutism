@@ -66,6 +66,16 @@ class Customer extends Model
         return $this->hasMany(ReservationParticipant::class);
     }
 
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function creditAccounts(): HasMany
+    {
+        return $this->hasMany(CreditAccount::class);
+    }
+
     /**
      * @return array<string, string>
      */

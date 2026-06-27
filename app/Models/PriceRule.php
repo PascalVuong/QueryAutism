@@ -10,23 +10,34 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[Fillable([
-    'reservation_id',
+    'uuid',
+    'organization_id',
+    'venue_id',
     'resource_id',
+    'code',
+    'name',
+    'type',
+    'status',
+    'amount',
+    'percentage',
+    'priority',
+    'is_stackable',
     'starts_at',
     'ends_at',
-    'quantity',
-    'unit_price',
-    'total_price',
-    'status',
-    'notes',
+    'conditions',
 ])]
-class ReservationItem extends Model
+class PriceRule extends Model
 {
     use HasFactory, SoftDeletes;
 
-    public function reservation(): BelongsTo
+    public function organization(): BelongsTo
     {
-        return $this->belongsTo(Reservation::class);
+        return $this->belongsTo(Organization::class);
+    }
+
+    public function venue(): BelongsTo
+    {
+        return $this->belongsTo(Venue::class);
     }
 
     public function resource(): BelongsTo
@@ -34,21 +45,20 @@ class ReservationItem extends Model
         return $this->belongsTo(Resource::class);
     }
 
-    public function charges(): HasMany
+    public function reservationCharges(): HasMany
     {
         return $this->hasMany(ReservationCharge::class);
     }
 
-    /**
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
+            'amount' => 'decimal:2',
+            'percentage' => 'decimal:4',
+            'is_stackable' => 'boolean',
             'starts_at' => 'datetime',
             'ends_at' => 'datetime',
-            'unit_price' => 'decimal:2',
-            'total_price' => 'decimal:2',
+            'conditions' => 'array',
         ];
     }
 }
