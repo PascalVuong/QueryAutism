@@ -76,6 +76,11 @@ class Customer extends Model
         return $this->hasMany(CreditAccount::class);
     }
 
+    public function salesOrders(): HasMany
+    {
+        return $this->hasMany(SalesOrder::class);
+    }
+
     /**
      * @return array<string, string>
      */

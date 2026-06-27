@@ -111,6 +111,26 @@ class Organization extends Model
         return $this->hasMany(CreditAccount::class);
     }
 
+    public function productCategories(): HasMany
+    {
+        return $this->hasMany(ProductCategory::class);
+    }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function stockLocations(): HasMany
+    {
+        return $this->hasMany(StockLocation::class);
+    }
+
+    public function salesOrders(): HasMany
+    {
+        return $this->hasMany(SalesOrder::class);
+    }
+
     /**
      * @return array<string, string>
      */

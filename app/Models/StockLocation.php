@@ -12,16 +12,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 #[Fillable([
     'uuid',
     'organization_id',
+    'venue_id',
+    'code',
     'name',
-    'slug',
+    'type',
     'status',
-    'timezone',
-    'address_line_1',
-    'city',
-    'country_code',
     'settings',
 ])]
-class Venue extends Model
+class StockLocation extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -30,19 +28,19 @@ class Venue extends Model
         return $this->belongsTo(Organization::class);
     }
 
-    public function facilities(): HasMany
+    public function venue(): BelongsTo
     {
-        return $this->hasMany(Facility::class);
+        return $this->belongsTo(Venue::class);
     }
 
-    public function reservations(): HasMany
+    public function inventoryLevels(): HasMany
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(InventoryLevel::class);
     }
 
-    public function stockLocations(): HasMany
+    public function inventoryMovements(): HasMany
     {
-        return $this->hasMany(StockLocation::class);
+        return $this->hasMany(InventoryMovement::class);
     }
 
     public function salesOrders(): HasMany
@@ -50,9 +48,6 @@ class Venue extends Model
         return $this->hasMany(SalesOrder::class);
     }
 
-    /**
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [

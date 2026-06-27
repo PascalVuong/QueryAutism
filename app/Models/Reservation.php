@@ -99,6 +99,11 @@ class Reservation extends Model
         return $this->hasMany(Refund::class);
     }
 
+    public function salesOrders(): HasMany
+    {
+        return $this->hasMany(SalesOrder::class);
+    }
+
     public function resources(): BelongsToMany
     {
         return $this->belongsToMany(

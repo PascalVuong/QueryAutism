@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             PhaseOneScenarioSeeder::class,
             PhaseTwoScenarioSeeder::class,
             PhaseThreeScenarioSeeder::class,
+            PhaseFourScenarioSeeder::class,
         ]);
     }
 }

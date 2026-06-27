@@ -12,16 +12,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 #[Fillable([
     'uuid',
     'organization_id',
+    'product_category_id',
+    'code',
     'name',
-    'slug',
     'status',
-    'timezone',
-    'address_line_1',
-    'city',
-    'country_code',
-    'settings',
+    'product_type',
+    'description',
+    'tax_rate',
+    'is_stock_tracked',
 ])]
-class Venue extends Model
+class Product extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -30,33 +30,24 @@ class Venue extends Model
         return $this->belongsTo(Organization::class);
     }
 
-    public function facilities(): HasMany
+    public function category(): BelongsTo
     {
-        return $this->hasMany(Facility::class);
+        return $this->belongsTo(
+            ProductCategory::class,
+            'product_category_id',
+        );
     }
 
-    public function reservations(): HasMany
+    public function variants(): HasMany
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(ProductVariant::class);
     }
 
-    public function stockLocations(): HasMany
-    {
-        return $this->hasMany(StockLocation::class);
-    }
-
-    public function salesOrders(): HasMany
-    {
-        return $this->hasMany(SalesOrder::class);
-    }
-
-    /**
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
-            'settings' => 'array',
+            'tax_rate' => 'decimal:2',
+            'is_stock_tracked' => 'boolean',
         ];
     }
 }
