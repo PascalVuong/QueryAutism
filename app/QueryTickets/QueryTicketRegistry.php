@@ -97,6 +97,16 @@ use App\QueryTickets\PhaseThree\Qry092OrganizationNetRevenue;
 use App\QueryTickets\PhaseThree\Qry093VenueNetRevenue;
 use App\QueryTickets\PhaseThree\Qry094PaymentMethodBreakdown;
 use App\QueryTickets\PhaseThree\Qry095FinancialHealthReport;
+use App\QueryTickets\PhaseFour\Qry096ActiveProductsWithCategory;
+use App\QueryTickets\PhaseFour\Qry097ProductsWithoutVariants;
+use App\QueryTickets\PhaseFour\Qry098StockTrackedVariantsWithoutInventory;
+use App\QueryTickets\PhaseFour\Qry099AvailableStockPerLocation;
+use App\QueryTickets\PhaseFour\Qry100LowStockInventoryLevels;
+use App\QueryTickets\PhaseFour\Qry101OutOfStockVariants;
+use App\QueryTickets\PhaseFour\Qry102SalesOrdersWithoutItems;
+use App\QueryTickets\PhaseFour\Qry103SalesOrdersWithItemCount;
+use App\QueryTickets\PhaseFour\Qry104CustomersWithMultipleSalesOrders;
+use App\QueryTickets\PhaseFour\Qry105SalesOrderTotalMismatches;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -200,6 +210,16 @@ class QueryTicketRegistry
         Qry093VenueNetRevenue::class,
         Qry094PaymentMethodBreakdown::class,
         Qry095FinancialHealthReport::class,
+        Qry096ActiveProductsWithCategory::class,
+        Qry097ProductsWithoutVariants::class,
+        Qry098StockTrackedVariantsWithoutInventory::class,
+        Qry099AvailableStockPerLocation::class,
+        Qry100LowStockInventoryLevels::class,
+        Qry101OutOfStockVariants::class,
+        Qry102SalesOrdersWithoutItems::class,
+        Qry103SalesOrdersWithItemCount::class,
+        Qry104CustomersWithMultipleSalesOrders::class,
+        Qry105SalesOrderTotalMismatches::class,
     ];
 
     /**
