@@ -32,6 +32,16 @@ use App\QueryTickets\PhaseOne\Qry027OrganizationsWithCustomerCount;
 use App\QueryTickets\PhaseOne\Qry028CustomersWithMembershipCount;
 use App\QueryTickets\PhaseOne\Qry029PlansWithActiveMembershipCount;
 use App\QueryTickets\PhaseOne\Qry030HighRiskCustomers;
+use App\QueryTickets\PhaseOne\Qry031CurrentActiveMemberships;
+use App\QueryTickets\PhaseOne\Qry032ExpiredMembershipsByEndDate;
+use App\QueryTickets\PhaseOne\Qry033UpcomingMemberships;
+use App\QueryTickets\PhaseOne\Qry034AutoRenewingMemberships;
+use App\QueryTickets\PhaseOne\Qry035CancelledMembershipsWithReason;
+use App\QueryTickets\PhaseOne\Qry036MembershipStatusTimeline;
+use App\QueryTickets\PhaseOne\Qry037MembershipsWithLatestStatus;
+use App\QueryTickets\PhaseOne\Qry038MembershipStatusMismatches;
+use App\QueryTickets\PhaseOne\Qry039StaleCustomerProfiles;
+use App\QueryTickets\PhaseOne\Qry040OverlappingMemberships;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -70,6 +80,16 @@ class QueryTicketRegistry
         Qry028CustomersWithMembershipCount::class,
         Qry029PlansWithActiveMembershipCount::class,
         Qry030HighRiskCustomers::class,
+        Qry031CurrentActiveMemberships::class,
+        Qry032ExpiredMembershipsByEndDate::class,
+        Qry033UpcomingMemberships::class,
+        Qry034AutoRenewingMemberships::class,
+        Qry035CancelledMembershipsWithReason::class,
+        Qry036MembershipStatusTimeline::class,
+        Qry037MembershipsWithLatestStatus::class,
+        Qry038MembershipStatusMismatches::class,
+        Qry039StaleCustomerProfiles::class,
+        Qry040OverlappingMemberships::class,
     ];
 
     /**
