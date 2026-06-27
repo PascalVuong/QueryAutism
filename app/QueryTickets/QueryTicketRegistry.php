@@ -77,6 +77,16 @@ use App\QueryTickets\PhaseTwo\Qry072ReservationStatusTimeline;
 use App\QueryTickets\PhaseTwo\Qry073VenueReservationRevenue;
 use App\QueryTickets\PhaseTwo\Qry074ResourcesWithNonCancelledBookingCount;
 use App\QueryTickets\PhaseTwo\Qry075OrganizationReservationHealthReport;
+use App\QueryTickets\PhaseThree\Qry076CurrentlyActivePriceRules;
+use App\QueryTickets\PhaseThree\Qry077ReservationChargeTotals;
+use App\QueryTickets\PhaseThree\Qry078ReservationsWithoutPayments;
+use App\QueryTickets\PhaseThree\Qry079UnderpaidReservations;
+use App\QueryTickets\PhaseThree\Qry080FailedPayments;
+use App\QueryTickets\PhaseThree\Qry081PartiallyRefundedPayments;
+use App\QueryTickets\PhaseThree\Qry082FullyRefundedPayments;
+use App\QueryTickets\PhaseThree\Qry083NetPaidAmountPerReservation;
+use App\QueryTickets\PhaseThree\Qry084CustomersWithCreditAccounts;
+use App\QueryTickets\PhaseThree\Qry085ExpiredCreditAccountsWithBalance;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -160,6 +170,16 @@ class QueryTicketRegistry
         Qry073VenueReservationRevenue::class,
         Qry074ResourcesWithNonCancelledBookingCount::class,
         Qry075OrganizationReservationHealthReport::class,
+        Qry076CurrentlyActivePriceRules::class,
+        Qry077ReservationChargeTotals::class,
+        Qry078ReservationsWithoutPayments::class,
+        Qry079UnderpaidReservations::class,
+        Qry080FailedPayments::class,
+        Qry081PartiallyRefundedPayments::class,
+        Qry082FullyRefundedPayments::class,
+        Qry083NetPaidAmountPerReservation::class,
+        Qry084CustomersWithCreditAccounts::class,
+        Qry085ExpiredCreditAccountsWithBalance::class,
     ];
 
     /**
