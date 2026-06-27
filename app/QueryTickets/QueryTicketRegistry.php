@@ -52,6 +52,16 @@ use App\QueryTickets\PhaseOne\Qry047DuplicateExternalIdentifiers;
 use App\QueryTickets\PhaseOne\Qry048CrossOrganizationVerifiedIdentifiers;
 use App\QueryTickets\PhaseOne\Qry049CustomerMembershipReport;
 use App\QueryTickets\PhaseOne\Qry050OrganizationHealthReport;
+use App\QueryTickets\PhaseTwo\Qry051ActiveVenues;
+use App\QueryTickets\PhaseTwo\Qry052FacilitiesForGreenValleyVenue;
+use App\QueryTickets\PhaseTwo\Qry053BookableActiveResources;
+use App\QueryTickets\PhaseTwo\Qry054MaintenanceResources;
+use App\QueryTickets\PhaseTwo\Qry055UpcomingReservations;
+use App\QueryTickets\PhaseTwo\Qry056ReservationsWithCustomerAndVenue;
+use App\QueryTickets\PhaseTwo\Qry057ReservationsWithoutParticipants;
+use App\QueryTickets\PhaseTwo\Qry058ReservationsWithParticipantCount;
+use App\QueryTickets\PhaseTwo\Qry059ResourcesNeverBooked;
+use App\QueryTickets\PhaseTwo\Qry060ReservationsWithMultipleResources;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -110,6 +120,16 @@ class QueryTicketRegistry
         Qry048CrossOrganizationVerifiedIdentifiers::class,
         Qry049CustomerMembershipReport::class,
         Qry050OrganizationHealthReport::class,
+        Qry051ActiveVenues::class,
+        Qry052FacilitiesForGreenValleyVenue::class,
+        Qry053BookableActiveResources::class,
+        Qry054MaintenanceResources::class,
+        Qry055UpcomingReservations::class,
+        Qry056ReservationsWithCustomerAndVenue::class,
+        Qry057ReservationsWithoutParticipants::class,
+        Qry058ReservationsWithParticipantCount::class,
+        Qry059ResourcesNeverBooked::class,
+        Qry060ReservationsWithMultipleResources::class,
     ];
 
     /**
