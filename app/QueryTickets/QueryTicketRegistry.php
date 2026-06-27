@@ -117,6 +117,11 @@ use App\QueryTickets\PhaseFour\Qry112SalesRevenueByVenue;
 use App\QueryTickets\PhaseFour\Qry113CustomerPurchaseSummary;
 use App\QueryTickets\PhaseFour\Qry114StockLocationInventoryReport;
 use App\QueryTickets\PhaseFour\Qry115InventoryAndSalesHealthReport;
+use App\QueryTickets\PhaseFour\Qry116CategoriesWithProductCount;
+use App\QueryTickets\PhaseFour\Qry117VariantsStockedAtMultipleLocations;
+use App\QueryTickets\PhaseFour\Qry118InventoryMovementSummaryByType;
+use App\QueryTickets\PhaseFour\Qry119SalesOrderStatusSummary;
+use App\QueryTickets\PhaseFour\Qry120OrganizationCommerceReport;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -240,6 +245,11 @@ class QueryTicketRegistry
         Qry113CustomerPurchaseSummary::class,
         Qry114StockLocationInventoryReport::class,
         Qry115InventoryAndSalesHealthReport::class,
+        Qry116CategoriesWithProductCount::class,
+        Qry117VariantsStockedAtMultipleLocations::class,
+        Qry118InventoryMovementSummaryByType::class,
+        Qry119SalesOrderStatusSummary::class,
+        Qry120OrganizationCommerceReport::class,
     ];
 
     /**
