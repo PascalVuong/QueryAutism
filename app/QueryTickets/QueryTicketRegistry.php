@@ -87,6 +87,16 @@ use App\QueryTickets\PhaseThree\Qry082FullyRefundedPayments;
 use App\QueryTickets\PhaseThree\Qry083NetPaidAmountPerReservation;
 use App\QueryTickets\PhaseThree\Qry084CustomersWithCreditAccounts;
 use App\QueryTickets\PhaseThree\Qry085ExpiredCreditAccountsWithBalance;
+use App\QueryTickets\PhaseThree\Qry086CreditBalanceMismatches;
+use App\QueryTickets\PhaseThree\Qry087CreditTransactionRunningBalances;
+use App\QueryTickets\PhaseThree\Qry088PaymentTransactionTimeline;
+use App\QueryTickets\PhaseThree\Qry089PaymentsWithMultipleTransactions;
+use App\QueryTickets\PhaseThree\Qry090RefundReconciliation;
+use App\QueryTickets\PhaseThree\Qry091CustomerPaymentSummary;
+use App\QueryTickets\PhaseThree\Qry092OrganizationNetRevenue;
+use App\QueryTickets\PhaseThree\Qry093VenueNetRevenue;
+use App\QueryTickets\PhaseThree\Qry094PaymentMethodBreakdown;
+use App\QueryTickets\PhaseThree\Qry095FinancialHealthReport;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -180,6 +190,16 @@ class QueryTicketRegistry
         Qry083NetPaidAmountPerReservation::class,
         Qry084CustomersWithCreditAccounts::class,
         Qry085ExpiredCreditAccountsWithBalance::class,
+        Qry086CreditBalanceMismatches::class,
+        Qry087CreditTransactionRunningBalances::class,
+        Qry088PaymentTransactionTimeline::class,
+        Qry089PaymentsWithMultipleTransactions::class,
+        Qry090RefundReconciliation::class,
+        Qry091CustomerPaymentSummary::class,
+        Qry092OrganizationNetRevenue::class,
+        Qry093VenueNetRevenue::class,
+        Qry094PaymentMethodBreakdown::class,
+        Qry095FinancialHealthReport::class,
     ];
 
     /**
