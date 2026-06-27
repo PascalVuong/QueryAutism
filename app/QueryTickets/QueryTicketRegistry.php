@@ -107,6 +107,16 @@ use App\QueryTickets\PhaseFour\Qry102SalesOrdersWithoutItems;
 use App\QueryTickets\PhaseFour\Qry103SalesOrdersWithItemCount;
 use App\QueryTickets\PhaseFour\Qry104CustomersWithMultipleSalesOrders;
 use App\QueryTickets\PhaseFour\Qry105SalesOrderTotalMismatches;
+use App\QueryTickets\PhaseFour\Qry106InventoryMovementTimeline;
+use App\QueryTickets\PhaseFour\Qry107InventoryRunningBalances;
+use App\QueryTickets\PhaseFour\Qry108InventoryLevelMismatches;
+use App\QueryTickets\PhaseFour\Qry109BestSellingVariants;
+use App\QueryTickets\PhaseFour\Qry110ProductSalesSummary;
+use App\QueryTickets\PhaseFour\Qry111ProductRevenueByOrganization;
+use App\QueryTickets\PhaseFour\Qry112SalesRevenueByVenue;
+use App\QueryTickets\PhaseFour\Qry113CustomerPurchaseSummary;
+use App\QueryTickets\PhaseFour\Qry114StockLocationInventoryReport;
+use App\QueryTickets\PhaseFour\Qry115InventoryAndSalesHealthReport;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -220,6 +230,16 @@ class QueryTicketRegistry
         Qry103SalesOrdersWithItemCount::class,
         Qry104CustomersWithMultipleSalesOrders::class,
         Qry105SalesOrderTotalMismatches::class,
+        Qry106InventoryMovementTimeline::class,
+        Qry107InventoryRunningBalances::class,
+        Qry108InventoryLevelMismatches::class,
+        Qry109BestSellingVariants::class,
+        Qry110ProductSalesSummary::class,
+        Qry111ProductRevenueByOrganization::class,
+        Qry112SalesRevenueByVenue::class,
+        Qry113CustomerPurchaseSummary::class,
+        Qry114StockLocationInventoryReport::class,
+        Qry115InventoryAndSalesHealthReport::class,
     ];
 
     /**
