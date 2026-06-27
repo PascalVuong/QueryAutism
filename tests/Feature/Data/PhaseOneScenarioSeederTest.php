@@ -20,7 +20,7 @@ class PhaseOneScenarioSeederTest extends TestCase
         $this->seed(PhaseOneScenarioSeeder::class);
 
         $this->assertDatabaseCount('organizations', 5);
-        $this->assertDatabaseCount('users', 5);
+        $this->assertDatabaseCount('users', 6);
         $this->assertDatabaseCount('user_profiles', 3);
         $this->assertDatabaseCount('organization_users', 7);
         $this->assertDatabaseCount('customers', 11);

@@ -78,6 +78,7 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'Olivia Owner',
                 'email' => 'owner@queryautism.test',
                 'status' => 'active',
+                'locale' => 'nl',
                 'last_login_at' => $now->subDay(),
                 'last_login_ip' => '192.0.2.10',
             ]);
@@ -96,6 +97,7 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'Mila Manager',
                 'email' => 'multi.manager@queryautism.test',
                 'status' => 'active',
+                'locale' => 'en',
                 'last_login_at' => $now->subDays(2),
                 'last_login_ip' => '192.0.2.11',
             ]);
@@ -113,6 +115,7 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'No Profile User',
                 'email' => 'no.profile@queryautism.test',
                 'status' => 'active',
+                'locale' => 'nl',
                 'last_login_at' => $now->subDays(3),
                 'last_login_ip' => '192.0.2.12',
             ]);
@@ -123,6 +126,9 @@ class PhaseOneScenarioSeeder extends Seeder
             ->create([
                 'name' => 'Suspended Staff',
                 'email' => 'suspended@queryautism.test',
+                'locale' => 'en',
+                'last_login_at' => $now->subDays(30),
+                'last_login_ip' => '192.0.2.13',
             ]);
 
         UserProfile::factory()
@@ -140,6 +146,18 @@ class PhaseOneScenarioSeeder extends Seeder
                 'name' => 'Never Logged In',
                 'email' => 'never.logged.in@queryautism.test',
                 'status' => 'active',
+                'locale' => 'nl',
+            ]);
+
+        User::factory()
+            ->verified()
+            ->pending()
+            ->create([
+                'name' => 'Pending User',
+                'email' => 'pending@queryautism.test',
+                'locale' => 'en',
+                'last_login_at' => $now->subDays(4),
+                'last_login_ip' => '192.0.2.14',
             ]);
 
         /*
@@ -343,6 +361,20 @@ class PhaseOneScenarioSeeder extends Seeder
                 'first_name' => 'Cora',
                 'last_name' => 'Cross Organization',
                 'email' => 'cora.cross@example.test',
+            ]);
+
+        Customer::query()->update([
+            'marketing_consent' => false,
+        ]);
+
+        Customer::query()
+            ->whereIn('customer_number', [
+                'GV-0001',
+                'GV-0002',
+                'GV-0004',
+            ])
+            ->update([
+                'marketing_consent' => true,
             ]);
 
         /*
