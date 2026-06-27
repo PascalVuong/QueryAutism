@@ -72,6 +72,11 @@ use App\QueryTickets\PhaseTwo\Qry067VenuesWithReservationCount;
 use App\QueryTickets\PhaseTwo\Qry068ResourcesWithUpcomingReservationCount;
 use App\QueryTickets\PhaseTwo\Qry069ReservationItemsWithResourceLocation;
 use App\QueryTickets\PhaseTwo\Qry070ReservationsWithCheckedInParticipants;
+use App\QueryTickets\PhaseTwo\Qry071ReservationStatusMismatches;
+use App\QueryTickets\PhaseTwo\Qry072ReservationStatusTimeline;
+use App\QueryTickets\PhaseTwo\Qry073VenueReservationRevenue;
+use App\QueryTickets\PhaseTwo\Qry074ResourcesWithNonCancelledBookingCount;
+use App\QueryTickets\PhaseTwo\Qry075OrganizationReservationHealthReport;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -150,6 +155,11 @@ class QueryTicketRegistry
         Qry068ResourcesWithUpcomingReservationCount::class,
         Qry069ReservationItemsWithResourceLocation::class,
         Qry070ReservationsWithCheckedInParticipants::class,
+        Qry071ReservationStatusMismatches::class,
+        Qry072ReservationStatusTimeline::class,
+        Qry073VenueReservationRevenue::class,
+        Qry074ResourcesWithNonCancelledBookingCount::class,
+        Qry075OrganizationReservationHealthReport::class,
     ];
 
     /**
