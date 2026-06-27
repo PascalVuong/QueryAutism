@@ -3,6 +3,7 @@
 namespace Tests\Feature\QueryTickets;
 
 use Database\Seeders\PhaseOneScenarioSeeder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Collection;
 use LogicException;
@@ -37,6 +38,25 @@ abstract class QueryTicketTestCase extends TestCase
             $this->assertSame(
                 $columns,
                 array_keys($result->getAttributes()),
+            );
+        }
+    }
+
+    /**
+     * @param array<int, string> $columns
+     */
+    protected function assertResultColumns(
+        Collection $results,
+        array $columns,
+    ): void {
+        foreach ($results as $result) {
+            $attributes = $result instanceof Model
+                ? $result->getAttributes()
+                : get_object_vars($result);
+
+            $this->assertSame(
+                $columns,
+                array_keys($attributes),
             );
         }
     }

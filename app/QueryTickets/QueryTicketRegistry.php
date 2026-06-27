@@ -42,6 +42,16 @@ use App\QueryTickets\PhaseOne\Qry037MembershipsWithLatestStatus;
 use App\QueryTickets\PhaseOne\Qry038MembershipStatusMismatches;
 use App\QueryTickets\PhaseOne\Qry039StaleCustomerProfiles;
 use App\QueryTickets\PhaseOne\Qry040OverlappingMemberships;
+use App\QueryTickets\PhaseOne\Qry041MembershipCountByStatus;
+use App\QueryTickets\PhaseOne\Qry042AveragePlanPriceByOrganization;
+use App\QueryTickets\PhaseOne\Qry043MembershipRevenueByOrganization;
+use App\QueryTickets\PhaseOne\Qry044MostExpensivePlanPerOrganization;
+use App\QueryTickets\PhaseOne\Qry045OrganizationWithMostCustomers;
+use App\QueryTickets\PhaseOne\Qry046CustomerWithMostMemberships;
+use App\QueryTickets\PhaseOne\Qry047DuplicateExternalIdentifiers;
+use App\QueryTickets\PhaseOne\Qry048CrossOrganizationVerifiedIdentifiers;
+use App\QueryTickets\PhaseOne\Qry049CustomerMembershipReport;
+use App\QueryTickets\PhaseOne\Qry050OrganizationHealthReport;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -90,6 +100,16 @@ class QueryTicketRegistry
         Qry038MembershipStatusMismatches::class,
         Qry039StaleCustomerProfiles::class,
         Qry040OverlappingMemberships::class,
+        Qry041MembershipCountByStatus::class,
+        Qry042AveragePlanPriceByOrganization::class,
+        Qry043MembershipRevenueByOrganization::class,
+        Qry044MostExpensivePlanPerOrganization::class,
+        Qry045OrganizationWithMostCustomers::class,
+        Qry046CustomerWithMostMemberships::class,
+        Qry047DuplicateExternalIdentifiers::class,
+        Qry048CrossOrganizationVerifiedIdentifiers::class,
+        Qry049CustomerMembershipReport::class,
+        Qry050OrganizationHealthReport::class,
     ];
 
     /**
