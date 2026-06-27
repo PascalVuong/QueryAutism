@@ -62,6 +62,16 @@ use App\QueryTickets\PhaseTwo\Qry057ReservationsWithoutParticipants;
 use App\QueryTickets\PhaseTwo\Qry058ReservationsWithParticipantCount;
 use App\QueryTickets\PhaseTwo\Qry059ResourcesNeverBooked;
 use App\QueryTickets\PhaseTwo\Qry060ReservationsWithMultipleResources;
+use App\QueryTickets\PhaseTwo\Qry061OverlappingResourceReservations;
+use App\QueryTickets\PhaseTwo\Qry062ReservationsDuringAvailabilityBlocks;
+use App\QueryTickets\PhaseTwo\Qry063ReservationsExceedingResourceCapacity;
+use App\QueryTickets\PhaseTwo\Qry064ReservationParticipantCountMismatches;
+use App\QueryTickets\PhaseTwo\Qry065ReservationsWithoutCreator;
+use App\QueryTickets\PhaseTwo\Qry066CustomersWithUpcomingReservations;
+use App\QueryTickets\PhaseTwo\Qry067VenuesWithReservationCount;
+use App\QueryTickets\PhaseTwo\Qry068ResourcesWithUpcomingReservationCount;
+use App\QueryTickets\PhaseTwo\Qry069ReservationItemsWithResourceLocation;
+use App\QueryTickets\PhaseTwo\Qry070ReservationsWithCheckedInParticipants;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -130,6 +140,16 @@ class QueryTicketRegistry
         Qry058ReservationsWithParticipantCount::class,
         Qry059ResourcesNeverBooked::class,
         Qry060ReservationsWithMultipleResources::class,
+        Qry061OverlappingResourceReservations::class,
+        Qry062ReservationsDuringAvailabilityBlocks::class,
+        Qry063ReservationsExceedingResourceCapacity::class,
+        Qry064ReservationParticipantCountMismatches::class,
+        Qry065ReservationsWithoutCreator::class,
+        Qry066CustomersWithUpcomingReservations::class,
+        Qry067VenuesWithReservationCount::class,
+        Qry068ResourcesWithUpcomingReservationCount::class,
+        Qry069ReservationItemsWithResourceLocation::class,
+        Qry070ReservationsWithCheckedInParticipants::class,
     ];
 
     /**
