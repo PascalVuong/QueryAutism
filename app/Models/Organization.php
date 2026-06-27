@@ -86,6 +86,16 @@ class Organization extends Model
         return $this->hasMany(ExternalIdentifier::class);
     }
 
+    public function venues(): HasMany
+    {
+        return $this->hasMany(Venue::class);
+    }
+
+    public function reservations(): HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
     /**
      * @return array<string, string>
      */

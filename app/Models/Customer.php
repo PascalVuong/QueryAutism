@@ -56,6 +56,16 @@ class Customer extends Model
         return $this->hasMany(ExternalIdentifier::class);
     }
 
+    public function reservations(): HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
+    public function reservationParticipants(): HasMany
+    {
+        return $this->hasMany(ReservationParticipant::class);
+    }
+
     /**
      * @return array<string, string>
      */
