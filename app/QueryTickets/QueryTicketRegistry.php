@@ -22,6 +22,16 @@ use App\QueryTickets\PhaseOne\Qry017ParentOrganizationsWithChildren;
 use App\QueryTickets\PhaseOne\Qry018UsersWithOrganizations;
 use App\QueryTickets\PhaseOne\Qry019UsersInMultipleOrganizations;
 use App\QueryTickets\PhaseOne\Qry020MembershipsWithCustomerAndPlan;
+use App\QueryTickets\PhaseOne\Qry021OrganizationsWithCustomers;
+use App\QueryTickets\PhaseOne\Qry022OrganizationsWithoutCustomers;
+use App\QueryTickets\PhaseOne\Qry023CustomersWithoutMemberships;
+use App\QueryTickets\PhaseOne\Qry024CustomersWithActiveMemberships;
+use App\QueryTickets\PhaseOne\Qry025CustomersWithoutActiveMemberships;
+use App\QueryTickets\PhaseOne\Qry026CustomersWithMultipleMemberships;
+use App\QueryTickets\PhaseOne\Qry027OrganizationsWithCustomerCount;
+use App\QueryTickets\PhaseOne\Qry028CustomersWithMembershipCount;
+use App\QueryTickets\PhaseOne\Qry029PlansWithActiveMembershipCount;
+use App\QueryTickets\PhaseOne\Qry030HighRiskCustomers;
 use Illuminate\Support\Collection;
 
 class QueryTicketRegistry
@@ -50,6 +60,16 @@ class QueryTicketRegistry
         Qry018UsersWithOrganizations::class,
         Qry019UsersInMultipleOrganizations::class,
         Qry020MembershipsWithCustomerAndPlan::class,
+        Qry021OrganizationsWithCustomers::class,
+        Qry022OrganizationsWithoutCustomers::class,
+        Qry023CustomersWithoutMemberships::class,
+        Qry024CustomersWithActiveMemberships::class,
+        Qry025CustomersWithoutActiveMemberships::class,
+        Qry026CustomersWithMultipleMemberships::class,
+        Qry027OrganizationsWithCustomerCount::class,
+        Qry028CustomersWithMembershipCount::class,
+        Qry029PlansWithActiveMembershipCount::class,
+        Qry030HighRiskCustomers::class,
     ];
 
     /**
